@@ -1,8 +1,12 @@
 # Project2
 NBA Bracket
 
+This app will be designed to track the wins and losses of 16 NBA teams. Whenever there is an opening in the bracket it will be tracked in the full stack application where the user can input the name of the team. Even if a team loses they will still be able to update the bracket if they want to change it. Each bracket will slot will have its own team name and the teams icon, the winner will be displayed in the middle of the bracket.
 User Stories:
-
+As a user, I will be able to upload my own NBA team.
+As a user, I will be able to include detailed information of the NBA teams (when user clicks on the team).
+As a user, I will be able to access and update previous NBA teams.
+As a user, I will be able to delete previous NBA teams.
 
 Technologies Used:
 Javascript
@@ -14,3 +18,6 @@ Node
 Nodemon
 MongoDB
 Mongoose
+
+WIREFRAME
+
