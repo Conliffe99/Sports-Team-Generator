@@ -1,6 +1,9 @@
 # Project2
 NBA Bracket
 
+User Stories:
+
+
 Technologies Used:
 Javascript
 CSS
