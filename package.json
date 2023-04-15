@@ -1,13 +1,28 @@
 {
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.22"
+  },
   "name": "project-2",
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "NBA Bracket",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Conliffe99/Project2.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Conliffe99/Project2/issues"
+  },
+  "homepage": "https://github.com/Conliffe99/Project2#readme"
 }
