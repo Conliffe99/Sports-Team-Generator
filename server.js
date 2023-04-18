@@ -42,4 +42,5 @@ app.listen(process.env.PORT, () => {
 });
 
 
+
 // his code sets up a simple Express app with two routes. The first route is a GET request to the /sportsBracket URL, which renders the index.ejs view file. The second route is a POST request to the same URL, which retrieves the value of the submitted word field, stores it in a variable, and then renders the index.ejs view file with the word variable passed in as a parameter.The index.ejs file can contain a form that allows users to enter a word and submit it to the server. When the form is submitted, the server retrieves the submitted word, stores it in a variable, and then re-renders the index.ejs file with the word displayed in the box.
