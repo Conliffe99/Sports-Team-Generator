@@ -1,17 +1,23 @@
-const express = require('express');
-const router = express.Router();
-const Team = require('../models/team');
+const mongoose = require('mongoose');
 
-// SHOW - Show team info
-router.get('/:id', async (req, res) => {
-  try {
-    const team = await Team.findById(req.params.id);
-    res.render('teams/show', { team });
-  } catch (err) {
-    console.log(err);
-    res.send('Error retrieving team from database');
+const teamSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true
+  },
+  city: {
+    type: String,
+    required: true
+  },
+  sport: {
+    type: String,
+    required: true
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now
   }
 });
 
-module.exports = router;
+module.exports = mongoose.model('Team', teamSchema);
 
