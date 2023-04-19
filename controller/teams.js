@@ -1,17 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Team = require('../models/team');
-
-// INDEX - Show all teams
-router.get('/', async (req, res) => {
-  try {
-    const teams = await Team.find({});
-    res.render('teams/index', { teams });
-  } catch (err) {
-    console.log(err);
-    res.send('Error retrieving teams from database');
-  }
-});
+const Team = require('../model/team');
 
 // CREATE - Add new team
 router.post('/', async (req, res) => {

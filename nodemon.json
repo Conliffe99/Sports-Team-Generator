@@ -1,0 +1,8 @@
+{
+    "env": {
+        "DB_USER": "acosta8",
+        "DB_PASSWORD": "gottagofast8",
+        "JWT_KEY_SECRET": "holy_rain_server_secr",
+        "PORT": 3000
+    }
+}

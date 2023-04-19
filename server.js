@@ -2,21 +2,20 @@ const express = require('express');
 const morgan = require('morgan'); 
 const methodOverride = require('method-override');
 const mongoose = require('mongoose');
-const teamsController = require('./controllers/teams');
+const teamsController = require('./controller/teams');
 
-require('dotenv').config();
 
 // Connect to database
-mongoose.connect(process.env.DATABASE_URL, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useFindAndModify: false,
-  useCreateIndex: true
-}).then(() => {
-  console.log('Connected to database');
-}).catch((err) => {
-  console.log(`Error connecting to database: ${err.message}`);
-});
+// mongoose.connect(process.env.DATABASE_URL, {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+//   useFindAndModify: false,
+//   useCreateIndex: true
+// }).then(() => {
+//   console.log('Connected to database');
+// }).catch((err) => {
+//   console.log(`Error connecting to database: ${err.message}`);
+// });
 
 // Initialize the express app
 const app = express();
@@ -40,6 +39,7 @@ app.get('/', (req, res) => {
 app.listen(process.env.PORT, () => {
   console.log(`Express is listening for requests from the browser on port: ${process.env.PORT}`);
 });
+
 
 
 

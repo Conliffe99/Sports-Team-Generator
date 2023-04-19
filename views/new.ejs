@@ -4,15 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Create Team</title>
 </head>
 <body>
     <h1>New Team</h1>
-    <form action="/teams" method="POST">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name">
+    <form onSubmit="handleSubmit(event)" action="/teams" method="POST">
+        <label for="teamName">Name:</label>
+        <input type="text" id="teamName" name="teamName">
         <input type="hidden" name="slot" value="<%= slot %>">
         <button type="submit">Create</button>
     </form>
+    <script>
+        const teamName= document.getElementById("teamName")
+        function handleSubmit(event) {
+event.preventDefault();
+console.log(teamName.value())
+console.log(event.target)
+}
+    </script>
 </body>
 </html>
