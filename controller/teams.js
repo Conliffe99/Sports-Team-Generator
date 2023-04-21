@@ -23,7 +23,7 @@ router.get('/:id', async (req, res, next) => {
     console.log (err);
     next()
   }
-}
+});
 
 // GET - Show form to create or edit team
 router.get('/:id/edit', async (req, res) => {
