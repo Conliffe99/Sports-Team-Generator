@@ -73,38 +73,52 @@
             border: 1px solid black;
             border-radius: 1px;
 }
-
-        
     </style>
-      <script src="boxclick.js"></script>
 </head>
 <body>
-    <div id="teamBox" class="box">Click me!</div>
     <div class="container">
         <div class="left">
-            <div class="box">1</div>
-            <div class="box">2</div>
-            <div class="box">3</div>
-            <div class="box">4</div>
-            <div class="box">5</div>
-            <div class="box">6</div>
-            <div class="box">7</div>
-            <div class="box">8</div>
-        </div>
-        <div class="middle">
-            <div class="box">9</div>
-            <div class="box">10</div>
-            <div class="box">11</div>
-            <div class="box">12</div>
-        </div>
-        <div class="right">
-            <div class="box">13</div>
-            <div class="box">14</div>
-        </div>
-        <div class="right">
-            <div class="box">15</div>
-        </div>
-        <div class="line"></div>
+            <div class="box" id="box1">1</div>
+            <div class="box" id="box2">2</div>
+            <div class="box" id="box3">3</div>
+            <div class="box" id="box4">4</div>
+            <div class="box" id="box5">5</div>
+            <div class="box" id="box6">6</div>
+            <div class="box" id="box7">7</div>
+            <div class="box" id="box8">8</div>
+          </div>
+          <div class="middle">
+            <div class="box" id="box9">9</div>
+            <div class="box" id="box10">10</div>
+            <div class="box" id="box11">11</div>
+            <div class="box" id="box12">12</div>
+          </div>
+          <div class="right">
+            <div class="box" id="box13">13</div>
+            <div class="box" id="box14">14</div>
+          </div>
+          <div class="right">
+            <div class="box" id="box15">15</div>
+          </div>
+          
+          <% for (let i=0; i< teams.length; i++ ){%>
+            
+
+          <%}%>
+
+          <script>
+            // get all the boxes by class name
+            const boxes = document.getElementsByClassName('box');
+          
+            // loop through the boxes and add an event listener to each one
+            for (let i = 0; i < boxes.length; i++) {
+              boxes[i].addEventListener('click', function() {
+                console.log('Box ' + (i+1) + ' clicked!');
+              });
+            }
+          </script>
+          
+        <!-- <div class="line"></div> -->
     </div>
 </body>
 </html>

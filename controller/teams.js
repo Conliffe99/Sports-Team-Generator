@@ -6,12 +6,24 @@ const Team = require('../model/team');
 router.get('/', async (req, res) => {
   try {
     const teams = await Team.find();
-    res.render('landing', { teams });
+    res.render('index', { teams });
   } catch (err) {
     console.log(err);
     res.send('Error retrieving teams from database');
   }
 });
+
+//show route
+router.get('/:id', async (req, res, next) => {
+  try{
+      const team = await Team.findById(req.params.id);
+      res.render('show',{team});
+  }
+  catch (err) {
+    console.log (err);
+    next()
+  }
+}
 
 // GET - Show form to create or edit team
 router.get('/:id/edit', async (req, res) => {
@@ -62,10 +74,6 @@ router.delete('/:id', async (req, res) => {
 });
 
 module.exports = router;
-
-
-
-
 
 
 
