@@ -7,6 +7,14 @@
     <title>Edit</title>
 </head>
 <body>
+    <% if (box15.value !== 'left') { %>
+        <script>
+          // Automatically fill out boxes 1 to 8 if box15 is not left
+          box1to8.forEach(box => box.value = 'default value');
+        </script>
+      <% } %>
 
+      
+      
 </body>
 </html>

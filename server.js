@@ -8,7 +8,7 @@ const teamsController = require('./controller/teams');
 
 
 //Connect to database
-mongoose.connect(process.env.DATABASE_URL)
+mongoose.connect("mongodb+srv://Conliffe99:v6F3cptYECC4IBB5@cluster0.mh9rmnv.mongodb.net/teamDB?")
 .then(() => {
   console.log('Connected to database');
 }).catch((err) => {

@@ -6,6 +6,10 @@
     <title>Box Layout</title>
     <style>
         body {
+            background-image: url('https://png.pngtree.com/back_origin_pic/04/16/79/e84520b4712625cb7fc15e69b6d25ca6.jpg');
+            background-size: cover;
+        }
+        body {
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
@@ -78,41 +82,83 @@
 <body>
     <div class="container">
         <div class="left">
-            <div class="box" id="box1">1</div>
-            <div class="box" id="box2">2</div>
-            <div class="box" id="box3">3</div>
-            <div class="box" id="box4">4</div>
-            <div class="box" id="box5">5</div>
-            <div class="box" id="box6">6</div>
-            <div class="box" id="box7">7</div>
-            <div class="box" id="box8">8</div>
-          </div>
-          <div class="middle">
-            <div class="box" id="box9">9</div>
-            <div class="box" id="box10">10</div>
-            <div class="box" id="box11">11</div>
-            <div class="box" id="box12">12</div>
-          </div>
-          <div class="right">
-            <div class="box" id="box13">13</div>
-            <div class="box" id="box14">14</div>
-          </div>
-          <div class="far right">
-            <div class="box" id="box15">15</div>
-          </div>
+          <input class="box" type="text" id= "box_1" placeholder="Enter value" />
+          <input class="box" type="text" placeholder="Enter value" />
+          <input class="box" type="text" placeholder="Enter value" />
+          <input class="box" type="text" placeholder="Enter value" />
+          <input class="box" type="text" placeholder="Enter value" />
+          <input class="box" type="text" placeholder="Enter value" />
+          <input class="box" type="text" placeholder="Enter value" />
+          <input class="box" type="text" placeholder="Enter value" />
+          <button type="button" onclick="grabBoxValues(event)">start</button>
+        </div>
+        <div class="middle">
+          <input class="box" type="text" placeholder="Enter value" />
+          <input class="box" type="text" placeholder="Enter value" />
+          <input class="box" type="text" placeholder="Enter value" />
+          <input class="box" type="text" placeholder="Enter value" />
+        </div>
+        <div class="right">
+          <input class="box" type="text" placeholder="Enter value" />
+          <input class="box" type="text" placeholder="Enter value" />
+          <select class="box" id="box15">
+            <option value="" selected disabled>Choose an option</option>
+            <option value="left">Left</option>
+            <option value="right">Right</option>
+          </select>
+        </div>
+      </div>
           
-            
-
+    
           <script>
-            // get all the boxes by class name
-            const boxes = document.getElementsByClassName('box');
-          
-            // loop through the boxes and add an event listener to each one
-            for (let i = 0; i < boxes.length; i++) {
-              boxes[i].addEventListener('click', function() {
-                console.log('Box ' + (i+1) + ' clicked!');
-              });
+            // Select the boxes
+            const boxes = document.querySelectorAll('.box');
+            const box1to8 = document.querySelectorAll('.left .box');
+            const box9to12 = document.querySelectorAll('.middle .box');
+            const box13and14 = document.querySelectorAll('.right .box');
+
+            const box1 = document.getElementById("box_1");
+            function grabBoxValues (event){
+                console.log(box1.value)
             }
+
+            // Disable boxes 9 to 12 and 13 and 14 initially
+            box9to12.forEach(box => box.disabled = true);
+            box13and14.forEach(box => box.disabled = true);
+            document.querySelector('#box15').disabled = true;
+
+            // Add an event listener to box1to8
+            box1to8.forEach(box => box.addEventListener('input', function() {
+                // Check if all box1to8 are filled out
+                const isBox1to8Filled = Array.from(box1to8).every(box => box.value.trim() !== '');
+
+                // If all box1to8 are filled out, enable boxes 9 to 12
+                if (isBox1to8Filled) {
+                box9to12.forEach(box => box.disabled = false);
+                }
+            }));
+
+            // Add an event listener to box9to12
+            box9to12.forEach(box => box.addEventListener('input', function() {
+                // Check if all box9to12 are filled out
+                const isBox9to12Filled = Array.from(box9to12).every(box => box.value.trim() !== '');
+
+                // If all box9to12 are filled out, enable boxes 13 and 14
+                if (isBox9to12Filled) {
+                box13and14.forEach(box => box.disabled = false);
+                }
+            }));
+
+            // Add an event listener to box13and14
+            box13and14.forEach(box => box.addEventListener('input', function() {
+                // Check if all box13and14 are filled out
+                const isBox13and14Filled = Array.from(box13and14).every(box => box.value.trim() !== '');
+
+                // If all box13and14 are filled out, enable box15
+                if (isBox13and14Filled) {
+                document.querySelector('#box15').disabled = false;
+                }
+            }));
           </script>
     </div>
 </body>

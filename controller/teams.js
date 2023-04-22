@@ -13,6 +13,10 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.get('/new', async (req, res)=>{
+      res.render('new.ejs')
+})
+
 //show route
 router.get('/:id', async (req, res, next) => {
   try{
@@ -37,30 +41,31 @@ router.get('/:id/edit', async (req, res) => {
 });
 
 // POST - Create new team
-router.post('/:id', async (req, res) => {
-  try {
-    const team = await Team.findById(req.params.id);
-    team.name = req.body.name;
-    await team.save();
-    res.redirect('/');
-  } catch (err) {
-    console.log(err);
-    res.send('Error saving team to database');
-  }
+router.post('/', async (req, res) => {
+  console.log(req.body)
+  // try {
+  //   const team = await Team.findById(req.params.id);
+  //   team.name = req.body.name;
+  //   await team.save();
+  //   res.redirect('/');
+  // } catch (err) {
+  //   console.log(err);
+  //   res.send('Error saving team to database');
+  // }
 });
 
 // PUT - Update team
 router.put('/:id', async (req, res) => {
-  try {
-    const team = await Team.findById(req.params.id);
-    team.name = req.body.name;
-    await team.save();
-    res.redirect('/');
-  } catch (err) {
-    console.log(err);
-    res.send('Error updating team in database');
-  }
-});
+//   try {
+//     const team = await Team.findById(req.params.id);
+//     team.name = req.body.name;
+//     await team.save();
+//     res.redirect('/');
+//   } catch (err) {
+//     console.log(err);
+//     res.send('Error updating team in database');
+//   }
+// });
 
 // DELETE - Delete team
 router.delete('/:id', async (req, res) => {
