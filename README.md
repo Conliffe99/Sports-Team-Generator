@@ -1,5 +1,3 @@
-![Image 4-22-23 at 7 19 AM](https://user-images.githubusercontent.com/122856513/233784639-b56a5516-8f34-4ca0-9c70-b1f6b1fcd4ce.JPG)
-![Image 4-22-23 at 6 56 AM](https://user-images.githubusercontent.com/122856513/233784647-c3ad7af6-17ec-41d5-ab82-91f244754877.JPEG)
 # Project2
 NBA Bracket
 
@@ -22,13 +20,13 @@ MongoDB
 Mongoose
 
 WIREFRAME
-
-https://www.figma.com/file/yeSH9imob0VJwzmlqZb4qr/Sports-Bracket?node-id=0%3A1&t=qCVKD2WFZFm8MsOj-1
+![Image 4-22-23 at 6 56 AM](https://user-images.githubusercontent.com/122856513/233784647-c3ad7af6-17ec-41d5-ab82-91f244754877.JPEG)
 
 Screenshots
 
 Screenshots of the app go here.
-
+![Image 4-22-23 at 7 19 AM](https://user-images.githubusercontent.com/122856513/233784639-b56a5516-8f34-4ca0-9c70-b1f6b1fcd4ce.JPG)
+![Image 4-22-23 at 7 19 AM 2](https://user-images.githubusercontent.com/122856513/233784590-36a25ee9-a120-4737-b611-5595aee20eb7.JPG)
 Getting Started:
 
 Include the link to my deployed app here 
@@ -44,4 +42,3 @@ Stretch Goals:
 
 Ability to set a line showing the winner of each team set
 havea a winner team in bold letters above bracket
-![Image 4-22-23 at 7 19 AM 2](https://user-images.githubusercontent.com/122856513/233784590-36a25ee9-a120-4737-b611-5595aee20eb7.JPG)
