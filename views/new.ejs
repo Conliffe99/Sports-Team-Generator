@@ -5,9 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Team</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+        input[type="text"] {
+            width: 150px;
+        }
+        button[type="submit"] {
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
-    <h1>New Teams</h1>
+    <h1>Teams</h1>
     
     <form action="/teams" method="POST">
         <label for="teamName">Name:</label>
@@ -30,7 +51,10 @@
     </form>
     <form action="http://localhost:3000/">
         <button type="submit">Home</button>
-      </form>
+    </form>
+</body>
+</html>
+
     <!-- <script>
         const teamName= document.getElementById("teamName")
         function handleSubmit(event) {
