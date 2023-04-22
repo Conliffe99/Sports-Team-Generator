@@ -29,7 +29,7 @@ Screenshots of the app go here.
 
 Getting Started:
 
-Include the link to my deployed app here
+Include the link to my deployed app here 
 
 MVP Goals:
 
