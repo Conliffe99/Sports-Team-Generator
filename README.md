@@ -42,3 +42,4 @@ Stretch Goals:
 
 Ability to set a line showing the winner of each team set
 havea a winner team in bold letters above bracket
+![Image 4-22-23 at 7 19 AM 2](https://user-images.githubusercontent.com/122856513/233784590-36a25ee9-a120-4737-b611-5595aee20eb7.JPG)
