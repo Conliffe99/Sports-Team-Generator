@@ -23,3 +23,22 @@ WIREFRAME
 
 https://www.figma.com/file/yeSH9imob0VJwzmlqZb4qr/Sports-Bracket?node-id=0%3A1&t=qCVKD2WFZFm8MsOj-1
 
+Screenshots
+
+Screenshots of the app go here.
+
+Getting Started:
+
+Include the link to my deployed app here
+
+MVP Goals:
+
+Construct a form for adding new entries to the bracket.
+Implement functionality for editing already existing teams.
+Be able to delete previously logged teams.
+Enhance the app's appearance with additional styling.
+
+Stretch Goals:
+
+Ability to set a line showing the winner of each team set
+havea a winner team in bold letters above bracket
