@@ -78,8 +78,59 @@
             border-radius: 1px;
 }
     </style>
+    <script>
+        function grabBoxValues(event) {
+          // function code here
+        }
+    </script>
 </head>
 <body>
+    <div class="container">
+      <div class="left">
+        <input class="box" type="text" id= "box_1" placeholder="Enter value" />
+        <input class="box" type="text" id= "box_2" placeholder="Enter value" />
+        <input class="box" type="text" id= "box_3" placeholder="Enter value" />
+        <input class="box" type="text" id= "box_4" placeholder="Enter value" />
+        <input class="box" type="text" id= "box_5" placeholder="Enter value" />
+        <input class="box" type="text" id= "box_6" placeholder="Enter value" />
+        <input class="box" type="text" id= "box_7" placeholder="Enter value" />
+        <input class="box" type="text" id= "box_8" placeholder="Enter value" />
+        <button type="button" onclick="grabBoxValues(event)">create</button>
+  
+        <!-- <button type="button" onclick="grabBoxValues(event)">start</button> -->
+      </div>
+      <div class="middle">
+        <input class="box" type="text" id= "box_9"placeholder="Enter value" />
+        <input class="box" type="text" id= "box_10"placeholder="Enter value" />
+        <input class="box" type="text" id= "box_11"placeholder="Enter value" />
+        <input class="box" type="text" id= "box_12"placeholder="Enter value" />
+      </div>
+      <div class="right">
+        <input class="box" type="text" id= "box_13" placeholder="Enter value" />
+        <input class="box" type="text" id= "box_14" placeholder="Enter value" />
+        <input class="box" type="text" id= "box_15" placeholder="Enter value"/>
+      </div>
+    </div>
+    <script>
+      function grabBoxValues(event) {
+        event.preventDefault();
+        let values = [];
+        const inputs = document.querySelectorAll(".box");
+        const urlParams = new URLSearchParams(window.location.search);
+        const answers = JSON.parse(urlParams.get("answers"));
+        for (let i = 0; i < inputs.length; i++) {
+          inputs[i].value = answers[i];
+        }
+        inputs.forEach((input) => {
+          values.push(input.value);
+        });
+        const url = "http://localhost:3000/teams/new";
+        window.location.href = url + "?answers=" + encodeURIComponent(JSON.stringify(values));
+      }
+    </script>
+  </body>
+  
+<!-- <body>
     <div class="container">
         <div class="left">
           <input class="box" type="text" id= "box_1" placeholder="Enter value" />
@@ -90,7 +141,9 @@
           <input class="box" type="text" placeholder="Enter value" />
           <input class="box" type="text" placeholder="Enter value" />
           <input class="box" type="text" placeholder="Enter value" />
-          <button type="button" onclick="grabBoxValues(event)">start</button>
+          <button type="button" onclick="grabBoxValues(event)">create</button>
+
+          <!<button type="button" onclick="grabBoxValues(event)">start</button> -->
         </div>
         <div class="middle">
           <input class="box" type="text" placeholder="Enter value" />
@@ -108,9 +161,21 @@
           </select>
         </div>
       </div>
-          
+      <script>
+        function grabBoxValues(event) {
+            event.preventDefault();
+            let values = [];
+            const inputs = document.querySelectorAll(".box");
+            inputs.forEach((input) => {
+                values.push(input.value);
+            });
+            const url = "http://localhost:3000/teams/new";
+            window.location.href = url + "?answers=" + encodeURIComponent(JSON.stringify(values));
+        }
+    </script> -->
     
-          <script>
+    
+          <!-- <script>
             // Select the boxes
             const boxes = document.querySelectorAll('.box');
             const box1to8 = document.querySelectorAll('.left .box');
@@ -158,8 +223,12 @@
                 if (isBox13and14Filled) {
                 document.querySelector('#box15').disabled = false;
                 }
-            }));
+            })); -->
           </script>
+          <form action="http://localhost:3000/teams/new">
+            <button type="submit">Create</button>
+          </form>
+          
     </div>
 </body>
 </html>

@@ -12,10 +12,11 @@ router.get('/', async (req, res) => {
     res.send('Error retrieving teams from database');
   }
 });
-
+//create new team
 router.get('/new', async (req, res)=>{
       res.render('new.ejs')
 })
+
 
 //show route
 router.get('/:id', async (req, res, next) => {
@@ -30,15 +31,25 @@ router.get('/:id', async (req, res, next) => {
 });
 
 // GET - Show form to create or edit team
-router.get('/:id/edit', async (req, res) => {
+router.get('/edit', async (req, res, next) => {
   try {
-    const team = await Team.findById(req.params.id);
-    res.render('teams/edit', { team });
-  } catch (err) {
-    console.log(err);
-    res.send('Error retrieving team from database');
+        const teams = await Team.find({});
+        res.render('edit', {teams});
   }
-});
+  catch (err) {
+    console.log (err);
+    next()
+    }
+  });
+
+
+  // try {
+  //   const team = await Team.findById(req.params.id);
+  //   res.render('teams/edit', { team });
+  // } catch (err) {
+  //   console.log(err);
+  //   res.send('Error retrieving team from database');
+  // }
 
 // POST - Create new team
 router.post('/', async (req, res) => {
@@ -56,16 +67,17 @@ router.post('/', async (req, res) => {
 
 // PUT - Update team
 router.put('/:id', async (req, res) => {
-//   try {
-//     const team = await Team.findById(req.params.id);
-//     team.name = req.body.name;
-//     await team.save();
-//     res.redirect('/');
-//   } catch (err) {
-//     console.log(err);
-//     res.send('Error updating team in database');
-//   }
-// });
+  console.log(req.body)
+  try {
+    const team = await Team.findById(req.params.id);
+    team.name = req.body.name;
+    await team.save();
+    res.redirect('/');
+  } catch (err) {
+    console.log(err);
+    res.send('Error updating team in database');
+  }
+  });
 
 // DELETE - Delete team
 router.delete('/:id', async (req, res) => {
@@ -77,6 +89,13 @@ router.delete('/:id', async (req, res) => {
     res.send('Error deleting team from database');
   }
 });
+
+//delete
+router.delete('/:id', async (req, res) => {
+  const team = await Team.findByIdAndDelete(req.params.id)
+  res.redirect('/Team')
+})
+
 
 module.exports = router;
 

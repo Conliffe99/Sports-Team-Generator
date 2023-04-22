@@ -4,17 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit</title>
+    <title>Create Team</title>
 </head>
 <body>
-    <% if (box15.value !== 'left') { %>
-        <script>
-          // Automatically fill out boxes 1 to 8 if box15 is not left
-          box1to8.forEach(box => box.value = 'default value');
-        </script>
-      <% } %>
+    <h1>Edit Teams</h1>
+    <form action="/teams" method="POST">
+        <label for="teamName">Name:</label>
+        <% for(let i=0; i<team.length++; i++{/%>
+            <input type="text" id="teamName" name="box1" value="<%=teams[i].name/%>">
+        
+        <%}%>
+        <!-- <input type="text" id="teamName" name="box2">
+        <input type="text" id="teamName" name="box3">
+        <input type="text" id="teamName" name="box4">
+        <input type="text" id="teamName" name="box5">
+        <input type="text" id="teamName" name="box6">
+        <input type="text" id="teamName" name="box7">
+        <input type="text" id="teamName" name="box8">
+        <input type="text" id="teamName" name="box9">
+        <input type="text" id="teamName" name="box10">
+        <input type="text" id="teamName" name="box11">
+        <input type="text" id="teamName" name="box12">
+        <input type="text" id="teamName" name="box13">
+        <input type="text" id="teamName" name="box14">
+        <input type="text" id="teamName" name="box15"> -->
+        <button type="submit">Create</button>
 
-      
-      
-</body>
-</html>
+        <!-- <% if (box15.value !== 'left') { %>
+            <script>
+              // Automatically fill out boxes 1 to 8 if box15 is not left
+              box1to8.forEach(box => box.value = 'default value');
+            </script>
+          <% } %> -->
+    </form>
