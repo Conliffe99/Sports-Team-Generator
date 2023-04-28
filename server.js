@@ -5,8 +5,6 @@ const methodOverride = require('method-override');
 const mongoose = require('mongoose');
 const teamsController = require('./controller/teams');
 
-
-
 //Connect to database
 mongoose.connect("mongodb+srv://Conliffe99:v6F3cptYECC4IBB5@cluster0.mh9rmnv.mongodb.net/teamDB?")
 .then(() => {
@@ -29,10 +27,9 @@ app.use(express.json());
 // Routes
 app.use('/teams', teamsController);
 
-// Index route
-app.get('/', (req, res) => {
-  res.render('index');
-});
+app.get('/', async (req, res) =>{
+  res.redirect('/teams')
+})
 
 // Listener
 app.listen(process.env.PORT, () => {

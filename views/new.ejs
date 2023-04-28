@@ -40,36 +40,27 @@
     <h1>Teams</h1>
     
     <form action="/teams" method="POST">
-        <!-- <label for="teamName">Name:</label> -->
-        <input type="text" id="teamName1" name="box1">
-        <input type="text" id="teamName2" name="box2">
-        <input type="text" id="teamName3" name="box3">
-        <input type="text" id="teamName4" name="box4">
-        <input type="text" id="teamName5" name="box5">
-        <input type="text" id="teamName6" name="box6">
-        <input type="text" id="teamName7" name="box7">
-        <input type="text" id="teamName8" name="box8">
-        <input type="text" id="teamName9" name="box9">
-        <input type="text" id="teamName10" name="box10">
-        <input type="text" id="teamName11" name="box11">
-        <input type="text" id="teamName12" name="box12">
-        <input type="text" id="teamName13" name="box13">
-        <input type="text" id="teamName14" name="box14">
-        <input type="text" id="teamName15" name="box15">
-        <button type="submit">Save</button>
-    </form>
-    <form action="http://localhost:3000/">
-        <button type="submit">Home</button>
+        <div>
+            <label for="name">
+                Name:
+            </label>
+            <input type="text" id="name" name="name">
+        </div>
+
+        <div>
+            <label for="city">
+                City:
+            </label>
+            <input type="text" id="city" name="city">
+        </div>
+
+        <div>
+            <label for="sport">
+                Sport:
+            </label>
+            <input type="text" id="sport" name="sport">
+        </div>
+        <input type="submit" value="Submit Team">
     </form>
 </body>
 </html>
-
-
-    <!-- <script>
-        const teamName= document.getElementById("teamName")
-        function handleSubmit(event) {
-event.preventDefault();
-console.log(teamName.value())
-console.log(event.target)
-}
-    </script> -->

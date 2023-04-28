@@ -7,30 +7,22 @@
     <title>Create Team</title>
 </head>
 <body>
-    <h1>Remove Teams</h1>
-    <form action="/teams" method="POST">
-        <label for="teamName">Name:</label>
-        <input type="text" id="teamName" name="box1">
-        <input type="text" id="teamName" name="box2">
-        <input type="text" id="teamName" name="box3">
-        <input type="text" id="teamName" name="box4">
-        <input type="text" id="teamName" name="box5">
-        <input type="text" id="teamName" name="box6">
-        <input type="text" id="teamName" name="box7">
-        <input type="text" id="teamName" name="box8">
-        <button type="submit">Create</button>
+    <h1>
+        <%= team.name %> 
+    </h1>
+    <h3>
+        City: <%= team.city %> 
+    </h3>
+    <h3>
+       Sport: <%= team.sport %> 
+    </h3>
+    <a href="/teams/<%= team.id %>/edit">
+        <button>
+            Edit team
+        </button>
+    </a>
+    <form method="POST" action="/teams/<%= team.id %>?_method=DELETE">
+        <input type="submit" value="Delete" style ="background-color: red;">
     </form>
-    <form action="/teams" method="POST">
-
-    </form>
-
-    <!-- <script>
-        const teamName= document.getElementById("teamName")
-        function handleSubmit(event) {
-event.preventDefault();
-console.log(teamName.value())
-console.log(event.target)
-}
-    </script> -->
 </body>
 </html>

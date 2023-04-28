@@ -7,33 +7,29 @@
     <title>Create Team</title>
 </head>
 <body>
-    <h1>Edit Teams</h1>
-    <form action="/teams" method="POST">
-        <label for="teamName">Name:</label>
-        <% for(let i=0; i<team.length++; i++{/%>
-            <input type="text" id="teamName" name="box1" value="<%=teams[i].name/%>">
-        
-        <%}%>
-        <!-- <input type="text" id="teamName" name="box2">
-        <input type="text" id="teamName" name="box3">
-        <input type="text" id="teamName" name="box4">
-        <input type="text" id="teamName" name="box5">
-        <input type="text" id="teamName" name="box6">
-        <input type="text" id="teamName" name="box7">
-        <input type="text" id="teamName" name="box8">
-        <input type="text" id="teamName" name="box9">
-        <input type="text" id="teamName" name="box10">
-        <input type="text" id="teamName" name="box11">
-        <input type="text" id="teamName" name="box12">
-        <input type="text" id="teamName" name="box13">
-        <input type="text" id="teamName" name="box14">
-        <input type="text" id="teamName" name="box15"> -->
-        <button type="submit">Create</button>
-
-        <!-- <% if (box15.value !== 'left') { %>
-            <script>
-              // Automatically fill out boxes 1 to 8 if box15 is not left
-              box1to8.forEach(box => box.value = 'default value');
-            </script>
-          <% } %> -->
+    <h1>
+        Edit <%= team.name %>
+    </h1>
+    <form method="POST" action="/teams/<%= team.id %>?_method=PUT">
+        <div>
+            <label for="name">
+                Name:
+            </label>
+            <input type="text" id="name" name="name" value="<%=team.name %>">
+        </div>
+        <div>
+            <label for="city">
+                City:
+            </label>
+            <input type="text" id="city" name="city" value="<%=team.city %>">
+        </div>
+        <div>
+            <label for="sport">
+                Sport:
+            </label>
+            <input type="text" id="sport" name="sport" value="<%=team.sport %>">
+        </div>
+        <input type="submit" value="Confirm" >
     </form>
+</body>
+</html>

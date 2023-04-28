@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Layout</title>
+    <style>
+        html, body {
+            height: 100%;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('https://png.pngtree.com/back_origin_pic/04/16/79/e84520b4712625cb7fc15e69b6d25ca6.jpg');
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .box {
+            width: 70px;
+            height: 70px;
+            margin: 10px;
+            background-color: #ccc;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+            text-align: center;
+        }
+
+        .left {
+            width: 460px;
+            justify-content: flex-start;
+        }
+
+        .left .box:nth-child(even) {
+            background-color: #ff5733;
+        }
+
+        .left .box:nth-child(odd) {
+            background-color: #c70039;
+        }
+
+        .middle {
+            width: 310px;
+            justify-content: center;
+            margin-top: 140px;
+        }
+
+        .middle .box:nth-child(even) {
+            background-color: #900c3f;
+        }
+
+        .middle .box:nth-child(odd) {
+            background-color: #581845;
+        }
+
+        .right {
+            width: 160px;
+            justify-content: flex-end;
+            margin-top: 199px;
+        }
+
+        .right .box:nth-child(even) {
+            background-color: #c7b198;
+        }
+
+        .right .box:nth-child(odd) {
+            background-color: #a9927d;
+        }
+
+        .far.right {
+            width: 70px;
+            justify-content: flex-end;
+            margin-top: 210px;
+        }
+
+        .far.right .box {
+            background-color: #000;
+        }
+
+        .line {
+            width: 390px;
+            height: 0;
+            border: 1px solid black;
+            border-radius: 1px;
+        }
+    </style>
+    <script>
+        function grabBoxValues(event) {
+          // function code here
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+      <div class="left">
+        <input class="box" type="text" id= "box_1" placeholder="Enter value" />
+        <input class="box" type="text" id= "box_2" placeholder="Enter value" />
+        <input class="box" type="text" id= "box_3" placeholder="Enter value" />
+        <input class="box" type="text" id= "box_4" placeholder="Enter value" />
+        <input class="box" type="text" id= "box_5" placeholder="Enter value" />
+        <input class="box" type="text" id= "box_6" placeholder="Enter value" />
+        <input class="box" type="text" id= "box_7" placeholder="Enter value" />
+        <input class="box" type="text" id= "box_8" placeholder="Enter value" />
+        <button type="button" onclick="grabBoxValues(event)">Begin!</button>
+  
+        <!-- <button type="button" onclick="grabBoxValues(event)">start</button> -->
+      </div>
+      <div class="middle">
+        <input class="box" type="text" id= "box_9"placeholder="Enter value" />
+        <input class="box" type="text" id= "box_10"placeholder="Enter value" />
+        <input class="box" type="text" id= "box_11"placeholder="Enter value" />
+        <input class="box" type="text" id= "box_12"placeholder="Enter value" />
+      </div>
+      <div class="right">
+        <input class="box" type="text" id= "box_13" placeholder="Enter value" />
+        <input class="box" type="text" id= "box_14" placeholder="Enter value" />
+      </div>
+      <div class="far right">
+        <input class="box" type="text" id= "box_15" placeholder="Enter value"/>
+      </div>
+    </div>
+    <script>
+      function grabBoxValues(event) {
+        event.preventDefault();
+        let values = [];
+        const inputs = document.querySelectorAll(".box");
+        const urlParams = new URLSearchParams(window.location.search);
+        const answers = JSON.parse(urlParams.get("answers"));
+        for (let i = 0; i < inputs.length; i++) {
+          inputs[i].value = answers[i];
+        }
+        inputs.forEach((input) => {
+          values.push(input.value);
+        });
+        const url = "http://localhost:3000/teams/new";
+        window.location.href = url + "?answers=" + encodeURIComponent(JSON.stringify(values));
+      }
+    </script>
+  </body>
+  
+<!-- <body>
+    <div class="container">
+        <div class="left">
+          <input class="box" type="text" id= "box_1" placeholder="Enter value" />
+          <input class="box" type="text" placeholder="Enter value" />
+          <input class="box" type="text" placeholder="Enter value" />
+          <input class="box" type="text" placeholder="Enter value" />
+          <input class="box" type="text" placeholder="Enter value" />
+          <input class="box" type="text" placeholder="Enter value" />
+          <input class="box" type="text" placeholder="Enter value" />
+          <input class="box" type="text" placeholder="Enter value" />
+          <button type="button" onclick="grabBoxValues(event)">create</button>
+
+          <!<button type="button" onclick="grabBoxValues(event)">start</button> -->
+        </div>
+      <script>
+        function grabBoxValues(event) {
+            event.preventDefault();
+            let values = [];
+            const inputs = document.querySelectorAll(".box");
+            inputs.forEach((input) => {
+                values.push(input.value);
+            });
+            const url = "http://localhost:3000/teams/new";
+            window.location.href = url + "?answers=" + encodeURIComponent(JSON.stringify(values));
+        }
+    </script> -->      
+    </div>
+</body>
+</html>

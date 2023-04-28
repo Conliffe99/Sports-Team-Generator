@@ -2,39 +2,36 @@ const express = require('express');
 const router = express.Router();
 const Team = require('../model/team');
 
-// GET - Show landing page
+// Index route
 router.get('/', async (req, res) => {
+  const teams = await Team.find({})
+  console.log(teams)
+  res.render('index', {teams});
+});
+
+//create new team
+router.get('/new', async (req, res)=>{
+  res.render('new.ejs')
+})
+
+// GET - Show landing page
+router.get('/:id', async (req, res, next) => {
   try {
-    const teams = await Team.find();
-    res.render('index', { teams });
+    const team = await Team.findById(req.params.id);
+    res.render('show', { team });
   } catch (err) {
     console.log(err);
     res.send('Error retrieving teams from database');
-  }
-});
-//create new team
-router.get('/new', async (req, res)=>{
-      res.render('new.ejs')
-})
-
-
-//show route
-router.get('/:id', async (req, res, next) => {
-  try{
-      const team = await Team.findById(req.params.id);
-      res.render('show',{team});
-  }
-  catch (err) {
-    console.log (err);
     next()
   }
 });
 
+
 // GET - Show form to create or edit team
-router.get('/edit', async (req, res, next) => {
+router.get('/:id/edit', async (req, res, next) => {
   try {
-        const teams = await Team.find({});
-        res.render('edit', {teams});
+        const team = await Team.findById(req.params.id);
+        res.render('edit', {team});
   }
   catch (err) {
     console.log (err);
@@ -42,42 +39,24 @@ router.get('/edit', async (req, res, next) => {
     }
   });
 
-
-  // try {
-  //   const team = await Team.findById(req.params.id);
-  //   res.render('teams/edit', { team });
-  // } catch (err) {
-  //   console.log(err);
-  //   res.send('Error retrieving team from database');
-  // }
+// PUT - Update team
+router.put('/:id', async (req, res) => {
+    const team = await Team.findByIdAndUpdate(req.params.id,req.body);
+    res.redirect('/teams');
+  });
 
 // POST - Create new team
 router.post('/', async (req, res) => {
   console.log(req.body)
-  // try {
-  //   const team = await Team.findById(req.params.id);
-  //   team.name = req.body.name;
-  //   await team.save();
-  //   res.redirect('/');
-  // } catch (err) {
-  //   console.log(err);
-  //   res.send('Error saving team to database');
-  // }
-});
-
-// PUT - Update team
-router.put('/:id', async (req, res) => {
-  console.log(req.body)
   try {
-    const team = await Team.findById(req.params.id);
-    team.name = req.body.name;
-    await team.save();
+    const team = await Team.create(req.body);
     res.redirect('/');
   } catch (err) {
     console.log(err);
-    res.send('Error updating team in database');
+    res.send('Error saving team to database');
   }
-  });
+});
+
 
 // DELETE - Delete team
 router.delete('/:id', async (req, res) => {
