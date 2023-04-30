@@ -6,6 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Sports Teams
     </title>
+    <style>
+        body {
+            background-image: url('https://png.pngtree.com/back_origin_pic/04/16/79/e84520b4712625cb7fc15e69b6d25ca6.jpg');
+            background-size: cover;
+        }
+        h1 {
+            color: beige;
+        }
+        h2 {
+            color: beige;
+        }
+        h3 {
+            color: beige;
+        }
+        h4 {
+            color: beige;
+        }
+    </style>
 </head>
 <body>
     <h1>
@@ -14,15 +32,15 @@
     <% for (let i=0; i < teams.length; i++){%>
         <a href="/teams/<%= teams[i]._id %>">
             <div>
-                <h3>
+                <h2>
                     <%= teams[i].name %>
-                </h3>
-                <h5>
+                </h2>
+                <h3>
                     City: <%= teams[i].city %>
-                </h5>
-                <h5>
+                </h3>
+                <h4>
                     Sport: <%= teams[i].sport %>
-                </h5>
+                </h4>
             </div>
         </a>
     <% } %>
