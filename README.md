@@ -41,4 +41,8 @@ Enhance the app's appearance with additional styling.
 Stretch Goals:
 
 Ability to set a line showing the winner of each team set
+<<<<<<< HEAD
 havea a winner team in bold letters above bracket
+=======
+havea a winner team in bold letters above bracket
+>>>>>>> Bracket/main
