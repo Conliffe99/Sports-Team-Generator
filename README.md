@@ -30,7 +30,9 @@ Screenshots
 
 Screenshots of the app go here.
 https://imgur.com/E5ElRbq
+
 https://imgur.com/W7a7mP0
+
 https://imgur.com/undefined
 Getting Started:
 
