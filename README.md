@@ -35,6 +35,7 @@ https://imgur.com/E5ElRbq
 https://imgur.com/W7a7mP0
 
 https://imgur.com/undefined
+
 Getting Started:
 
 Include the link to my deployed app here 
