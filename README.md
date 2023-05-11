@@ -1,12 +1,12 @@
 # Project2
 NBA Bracket
 
-This app will be designed to track the wins and losses of 8 NBA teams. Whenever there is an opening in the bracket it will be tracked in the full stack application where the user can input the name of the team. Even if a team loses they will still be able to update the bracket if they want to change it. Each bracket will slot will have its own team name and the teams icon, the winner will be displayed in the middle of the bracket.
+This app will be designed to create edit and delete sports teams. By clicking on a created sports team the user will be taken to another page where they can choose to edit or delete that said team. once the team is deleted or edited they will be taken back to the home page showing the updated team.
 User Stories:
-As a user, I will be able to create my own NBA team.
-As a user, I will be able to include detailed information of the NBA teams (when user clicks on the team).
-As a user, I will be able to access and update previous NBA teams.
-As a user, I will be able to delete previous NBA teams.
+As a user, I will be able to create my own sports team.
+As a user, I will be able to include detailed information of the sports teams (when user clicks on the team).
+As a user, I will be able to access and update previous sports teams.
+As a user, I will be able to delete previous sports teams.
 
 Technologies Used:
 Javascript
@@ -44,16 +44,12 @@ https://project2-r5z8.onrender.com
 
 MVP Goals:
 
-Construct a form for adding new entries to the bracket.
+Construct a form for adding new entries.
 Implement functionality for editing already existing teams.
 Be able to delete previously logged teams.
 Enhance the app's appearance with additional styling.
 
 Stretch Goals:
 
-Ability to set a line showing the winner of each team set
+Style the teams so they are not stacked ontop of one another
 <<<<<<< HEAD
-havea a winner team in bold letters above bracket
-=======
-havea a winner team in bold letters above bracket
->>>>>>> Bracket/main
