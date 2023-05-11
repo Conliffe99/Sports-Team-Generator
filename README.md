@@ -23,9 +23,6 @@ Mongoose
 LINK TO APP
 https://sportsbracket1.onrender.com/teams
 
-WIREFRAME
-![Image 4-22-23 at 6 56 AM](https://user-images.githubusercontent.com/122856513/233784647-c3ad7af6-17ec-41d5-ab82-91f244754877.JPEG)
-
 
 Screenshots of the app go here.
 
