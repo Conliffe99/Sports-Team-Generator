@@ -38,9 +38,11 @@ https://imgur.com/undefined
 
 Getting Started:
 
-Include the link to my deployed app here 
+Click on new team
 
-https://project2-r5z8.onrender.com
+Fill in boxes with your own city, sport, and team name then click create
+
+Click on the created team to edit or delete the team
 
 MVP Goals:
 
