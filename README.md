@@ -1,5 +1,4 @@
-# Project2
-NBA Bracket
+# Sports Team Generator
 
 This app will be designed to create edit and delete sports teams. By clicking on a created sports team the user will be taken to another page where they can choose to edit or delete that said team. once the team is deleted or edited they will be taken back to the home page showing the updated team.
 User Stories:
